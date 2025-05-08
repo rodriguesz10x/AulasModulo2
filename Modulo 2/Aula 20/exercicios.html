@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio aula 20</title>
+</head>
+<script>
+    // 5. Substituir um elemento por outro dado o array ['joão','ana','paulo'], peça para o usuário (via prompt() em ambiente de navegador) digitar um nome. Se esse nome existir no array (includes), substitua por "visitante" com splice.
+
+    let nomes = ['joao','ana','paulo']
+    nomes [2] =  "Pedro"
+    console.log(nomes);
+
+    let user = prompt('Digite um nome: ')
+
+    let indice_user = nomes.indexOf(user)
+
+    if(nomes.includes(user)){
+        nomes.splice(indice_user,1,'visitante')
+    }
+    console.log(nomes);
+
+    // 7. Contar quantas vezes aparece um nome com o array ['Ana', 'Pedro', 'Ana', 'Maria', 'Ana'], use for para contar quantas vezes o nome "Ana" aparece.
+
+    nomes =  ['Ana', 'Pedro', 'Ana', 'Maria', 'Ana']
+
+    let cont = 0
+
+    for(let i=0; i < nomes.length; i++){
+        if(nomes[i] === "Ana"){
+            cont++
+        }
+    }
+    console.log(`Ana apareceu ${cont} vezes`)
+
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+<body>
+    
+</body>
+</html>

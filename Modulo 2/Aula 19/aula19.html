@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<script src="funcoes.js"></script>
+<script>
+
+    // let  imc = calcular_imc(1.7,70)
+    // console.log(imc)
+
+    // let tf = converterTemp(30)
+    // console.log(`A temperatura em F é ${tf}`)
+    
+// ARRAY                        
+// let nomes = ['Ana','Pedro','Maria',28,30,12,true,true,false]  // <<<INDICES
+// console.log(nomes)
+// console.log(nomes[2])
+// console.log(nomes.length)
+// nomes[9 = 'Carla']
+// nomes[10 = 'Joao']
+
+// let nomes = ['Ana','Pedro','Maria','Davi','Paulo','Gabriel']
+
+// for(let i = 0;i < nomes.length; i++){
+
+//     console.log(`Olá ${nomes[i]}`)
+// }
+
+// let notas = []
+
+// for(let i = 0; i < 3;i++){
+//     notas[i] = Number(prompt('Digite a nota'))
+//     console.log(`Sua nota é igual a ${notas}`)
+// }
+//     let media = calcular_media(notas)
+//     console.log(`sua média é ${media}`)
+
+// METODOS DE ARRAYS
+// // METODO PUSH
+
+    let nomes = ['Ana','Pedro','Maria']
+    nomes.push('Davi')
+    console.log(nomes)
+
+
+// // METODO POP
+
+    nomes.pop()
+    console.log(nomes)
+
+// // METODO SHIFT
+
+    nomes.shift()
+    console.log(nomes)
+
+// // METODO UNSHIFT
+
+    nomes.unshift('Rafael')
+    console.log(nomes)
+
+// // METODO SLICE
+
+    let letras = ['a','b','c','d']
+    let parte = letras.slice(1,3)
+    console.log(parte)
+
+// // METODO SPLICE
+
+    letras.splice(2,1,'f')
+    console.log(letras)
+    
+</script>
+<body>
+    
+</body>
+</html>
