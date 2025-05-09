@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage</title>
+</head>
+
+<body>
+    <div>
+
+        <h2>Cadastro de Aluno</h2>
+
+        <label for="matricula">Matricula:<label>
+        <input type="text" id="matricula" name="matricula"><br><br>
+
+        <label for="nome">Nome:<label>
+        <input type="text" id="nome" name="nome"><br><br>
+
+        <label for="idade">Idade:<label>
+        <input type="text" id="idade" name="idade"><br><br>
+
+        <label for="notaPortugues">Nota Português:<label>
+        <input type="text" id="notaPortugues" name="notaPortugues"><br><br>
+
+        <label for="notaMatematica">Nota Matemática:<label>
+        <input type="text" id="notaMatematica" name="notaMatematica"><br><br>
+
+        <button onclick="cadastroAluno()">Cadastrar Aluno</button><br><br>
+
+    <div>
+
+        <h2>Busca de Aluno</h2>
+
+        <label for="matricula">Matricula:</label>
+        <input type="text" id="matricula" name="matricula"><br><br>
+
+        <button onclick="buscaAluno()">Buscar</button><br><br>
+
+    <div>
+        
+    <div id="resultadoBusca">
+
+    </div>
+
+    <div>
+
+        <h2>Apagar Cadastro do Aluno</h2>
+
+        <label for="matricula">Matricula:</label>
+        <input type="text" id="matricula" name="matricula"><br><br>
+
+        <button>Apagar Cadastro</button>
+
+    </div>
+
+    <div id="resultadoApagar"></div>
+
+</body>
+
+<script>
+
+    function cadastroAluno(){
+
+        let matricula = document.getElementById('matricula').value
+        let nome = document.getElementById('nome').value
+        let idade  = document.getElementById('idade').value
+        let notaPortugues = document.getElementById('notaPortugues').value
+        let notaMatematica = document.getElementById('notaMatematica').value
+
+        let aluno = {
+            nome:nome,
+            idade:idade,
+            notaPortugues:notaPortugues,
+            notaMatematica:notaMatematica
+        }
+
+        aluno = JSON.stringify(aluno)
+        console.log(aluno)
+        
+        localStorage.setItem(matricula,aluno)
+
+    }
+
+    function buscaAluno(){
+
+    }
+
+</script>
+
+</html>
