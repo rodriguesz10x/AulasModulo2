@@ -1,0 +1,27 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1{
+  color: white;
+  text-align: center;
+  border: solid black 3px;
+  background-color: gray;
+}
+
+p{
+  background-color: black;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+.paragrafo{
+  color: red;
+}
