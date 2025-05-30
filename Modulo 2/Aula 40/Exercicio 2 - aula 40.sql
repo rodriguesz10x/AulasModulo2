@@ -214,3 +214,5 @@ select * from professores;
 select * from turmas;
 select * from disciplinas;
 select * from matriculas_disciplinas;
+
+select * from usuarios where ativo = 'true';
