@@ -62,7 +62,7 @@ app.get('/todosUsuarios',(req,res)=>{
 app.get('/todosAlunos/:id',(req,res)=>{
     const conexao = conectarBanco()
     let id = req.params.id
-    let sql = `select * from usuarios where tipo = 'aluno' and id ${id}`
+    let sql = `select * from usuarios where tipo = 'aluno' and id = ${id}`
     conexao.query(sql,(e,result)=>{
         if(e){
             console.log(`deu erro: ${e}`)
@@ -70,22 +70,6 @@ app.get('/todosAlunos/:id',(req,res)=>{
             return res.json(result)
         }
         conexao.end()
-    })
-    conexao.end()
-})
-
-app.post('/cadastrarUsuario',(req,res)=>{
-    const conexao = conectarBanco()
-    let novoUsuario = req.body
-    let sql = `insert into usuarios (username, senha, nome, ativo, tipo) values ('${novoUsuario.username}','${novoUsuario.senha}','${novoUsuario.nome}','${novoUsuario.ativo}','${novoUsuario.tipo}')`
-
-    conexao.query(sql,(e,result)=>{
-        if(e){
-            console.log(e)            
-        }else{
-            res.status(200)
-            return res.send('Usuário Cadastrado!!')
-        }
     })
 })
 
