@@ -52,6 +52,19 @@ app.get('/usuarios/:id',(req,res) => {
 
 })
 
+app.post('/cadastrarUsuario',(req,res)=>{
+    let novoUsuario = req.body
+    let sql = `insert into usuarios (username, senha, nome, tipo, ativo) values ('${novoUsuario.username}','${novoUsuario.senha}','${novoUsuario.nome}','${novoUsuario.tipo}','${novoUsuario.ativo}')`
+    conexao.query(sql,(erro,result)=>{
+        try {
+            return res.send('usuario cadastrado')
+        } catch (error) {
+            console.log(error)
+            console.log(erro)
+        }
+    })
+})
+
 
 app.listen(porta, ()=>{
     console.log(`O servidor está rodando na porta ${porta}`)
