@@ -8,12 +8,15 @@ import AppRoutes from './routes/AppRoutes'
 import { UserProvider } from './contexts/UserContext'
 //teste
 function App() {
+
+  let logado = false
+
   return (
     <>
     <UserProvider>
 
       <BrowserRouter>
-        <Navbar/>
+        {logado && <Navbar/>}
         <AppRoutes/>
       </BrowserRouter>
       
