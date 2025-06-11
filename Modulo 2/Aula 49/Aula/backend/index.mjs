@@ -43,6 +43,21 @@ conexao.connect((erro) => {
     }
 })
 
+function autenticarUsuario(req,res, next){
+    const token = req.headers.authorization?.split(' ')[1]
+    if(!token){
+        return res.status(401).json({msg:'Token não fornecido'})
+    }
+
+    try {
+        const usuario = jwt.verify(token,senhaJWT)
+        req.usuario = usuario
+        next()
+    } catch (error) {
+        return res.status(403).json({msg:'Token invalido'})
+    }
+}
+
 app.get('/',(req,res) => {
     res.send('Servidor rodando')
 })
@@ -84,6 +99,10 @@ app.post('/verificarLogin', (req,res) => {
             return res.status(401).json({erro:'erro'})
         }
     })
+})
+
+app.get('/dadosProfessor',autenticarUsuario,(req,res)=>{
+    return res.send('API professores')
 })
 
 
